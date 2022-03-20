@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 22:34:48 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/20 23:21:14 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/20 23:25:46 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef	GET_NEXT_LINE_H
@@ -22,6 +22,6 @@
 #	include	<unistd.h>
 #	include	"libft/libft.h"
 
-int	get_enxt_line(const int fd, char **line);
+int	get_next_line(const int fd, char **line);
 
 #endif
