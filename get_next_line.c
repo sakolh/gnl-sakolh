@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 22:35:08 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/22 01:18:43 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/22 01:39:55 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -59,5 +59,16 @@ static int	gnl_verify_line(char **stack, char **line)
 	int	i;
 
 	i = 0;
-	strcahr
+	strchr_stack = *stack;
+	while (strchr_stack[i] != '\n')
+		if (!strchr_stack[i++])
+			return (0);
+	tmp_stack = &strchr_stack[i];
+	*tmp_stack = '\0';
+	*line = ft_strdup(*stack);
+	*stack = ft_strdup(tmp_stack + 1);
+	return (1);
+}
+
+	
 
