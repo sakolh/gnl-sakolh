@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 22:35:08 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/22 01:39:55 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/22 02:14:56 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -70,5 +70,27 @@ static int	gnl_verify_line(char **stack, char **line)
 	return (1);
 }
 
-	
+static int	gnl_read_file(int fd, char *heapm char **stack, char **line)
+{
+	int	ret;
+	char	*tmp_stack;
+
+	while ((ret = read(fd, heap, BUFF_SIZE)) > 0)
+	{
+		heap[ret] = '\0';
+		if (*stsck)
+		{
+			tmp_stack = *stack;
+			*stack = ft_strjoin(tmp_stack, heap);
+			free(tmp_stack);
+			tmp_stack = NULL;
+		}
+		else
+			*stack = ft_strdup(hea;);
+		if (gnl_verify_line(stack, line))
+			break;
+	}
+	return (RET_VALUE(ret));
+}
+
 
