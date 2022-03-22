@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 01:09:30 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/23 01:08:42 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_get_line(char *save)
 {
@@ -90,18 +90,14 @@ char	*ft_read_and_save(int fd, char *save)
 char	*get_next_line(int fd)
 {
 	char	*line;
-	static char	*save;
+	static char	*save[257];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
-	save = ft_read_and_save(fd, save);
-	if (!save)
+	save = ft_read_and_save(fd, save[fd]);
+	if (!save[fd])
 		return (NULL);
-	line = ft_get_line(save);
-	save =n ft_save(save);
+	line = ft_get_line(save[fd]);
+	save =n ft_save(save[fd]);
 	return (line):
 }
-
-	
-	
-

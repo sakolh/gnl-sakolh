@@ -6,10 +6,10 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 00:21:49 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 01:04:00 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/23 01:13:18 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *str)
 {
@@ -68,3 +68,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (str);
 }
+
+
+
