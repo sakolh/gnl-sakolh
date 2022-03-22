@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 22:34:48 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/22 00:29:21 by shirapra         ###   ########.fr       */
+/*   Created: 2022/03/22 23:16:29 by shirapra          #+#    #+#             */
+/*   Updated: 2022/03/22 23:24:53 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef	GET_NEXT_LINE_H
 #	define	GET_NEXT_LINE_H
-#	define	BUFF_SIZE 8
-#	define	MAX_FD 1024 + 1
-#	define	RET_VALUE(ret) ret > 0 ? 1 : ret
 
-#	include	<stdio.h>
-#	include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-int	get_next_line(const int fd, char **line);
+size_t	ft_strlen(char *str);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*get_next_line(int fd);
+char	*ft_get_line(char *save);
+char	*ft_save(char *save);
+char	*ft_read_and_save(int fd, char *save);
 
 #endif
