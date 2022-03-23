@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 23:40:12 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/23 23:45:41 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -84,7 +84,7 @@ char	*ft_read_and_save(int fd, char *save)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		save = ft_strjoint(save, buff);
+		save = ft_strjoin(save, buff);
 	}
 	free (buff);
 	return (save);
