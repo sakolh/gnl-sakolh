@@ -6,22 +6,23 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 01:09:30 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/23 23:40:12 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
+#include <stdlib.h>
 
 char	*ft_get_line(char *save)
 {
-	int	i;
+	int		i;
 	char	*s;
 
-	i =0;
+	i = 0;
 	if (!save[i])
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i +2));
+	s = (char *)malloc(sizeof(char) * (i + 2));
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -32,14 +33,17 @@ char	*ft_get_line(char *save)
 	}
 	if (save[i] == '\n')
 	{
-		s[i] == save[i];
+		s[i] = save[i];
 		i++;
 	}
+	s[i] = '\0';
+	return (s);
+}
 
 char	*ft_save(char *save)
 {
-	int	i;
-	int	c;
+	int		i;
+	int		c;
 	char	*s;
 
 	i = 0;
@@ -48,8 +52,7 @@ char	*ft_save(char *save)
 	if (!save[i])
 	{
 		free(save);
-		return (NULL):
-			i++;
+		return (NULL);
 	}
 	s = (char *)malloc(sizeof(char) * (ft_strlen(save) - i + 1));
 	if (!s)
@@ -65,8 +68,8 @@ char	*ft_save(char *save)
 
 char	*ft_read_and_save(int fd, char *save)
 {
+	int		read_bytes;
 	char	*buff;
-	int	read_bytes;
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
@@ -75,13 +78,13 @@ char	*ft_read_and_save(int fd, char *save)
 	while (!ft_strchr(save, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
-		if (reas_bytes == -1)
+		if (read_bytes == -1)
 		{
 			free(buff);
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		save = ft_strjopint(save, buff);
+		save = ft_strjoint(save, buff);
 	}
 	free (buff);
 	return (save);
@@ -89,7 +92,7 @@ char	*ft_read_and_save(int fd, char *save)
 
 char	*get_next_line(int fd)
 {
-	char	*line;
+	char		*line;
 	static char	*save;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -98,10 +101,6 @@ char	*get_next_line(int fd)
 	if (!save)
 		return (NULL);
 	line = ft_get_line(save);
-	save =n ft_save(save);
-	return (line):
+	save = ft_save(save);
+	return (line);
 }
-
-	
-	
-
