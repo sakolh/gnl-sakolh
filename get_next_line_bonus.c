@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 01:08:42 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/24 01:00:17 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -32,9 +32,12 @@ char	*ft_get_line(char *save)
 	}
 	if (save[i] == '\n')
 	{
-		s[i] == save[i];
+		s[i] = save[i];
 		i++;
 	}
+	s[i] = '\0';
+	return (s);
+}
 
 char	*ft_save(char *save)
 {
