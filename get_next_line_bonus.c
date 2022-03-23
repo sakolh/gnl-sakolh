@@ -6,7 +6,7 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/24 01:15:38 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/24 01:26:55 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -97,10 +97,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
-	save = ft_read_and_save(fd, save[fd]);
+	save[fd] = ft_read_and_save(fd, save[fd]);
 	if (!save[fd])
 		return (NULL);
 	line = ft_get_line(save[fd]);
-	save = ft_save(save[fd]);
+	save[fd] = ft_save(save[fd]);
 	return (line);
 }
