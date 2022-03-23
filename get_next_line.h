@@ -6,14 +6,15 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:16:29 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/22 23:58:34 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/24 00:24:49 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef	GET_NEXT_LINE_H
-#	define	GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <stdio.h>
-#include <unistd.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 size_t	ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);

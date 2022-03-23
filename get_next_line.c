@@ -6,11 +6,10 @@
 /*   By: shirapra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:25:59 by shirapra          #+#    #+#             */
-/*   Updated: 2022/03/23 23:45:41 by shirapra         ###   ########.fr       */
+/*   Updated: 2022/03/23 23:55:53 by shirapra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
-#include <stdlib.h>
 
 char	*ft_get_line(char *save)
 {
